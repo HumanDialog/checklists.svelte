@@ -1,11 +1,8 @@
 <script>
-    import Table from './forms/components/table/table.svelte'
-    import Column from './forms/components/table/column.svelte'
+    import {Table, TableColumn, Icon, Edit} from '@humandialog/forms.svelte'
     import {location} from 'svelte-spa-router'
     import {Auth, session} from '@humandialog/auth.svelte'
     import { Spinner } from 'flowbite-svelte';
-    import Icon from './lib/icon.svelte'
-    import Edit from './forms/components/edit.field.svelte'
     import FaPlus from 'svelte-icons/fa/FaPlus.svelte'
     import FaRegCheckCircle from 'svelte-icons/fa/FaRegCheckCircle.svelte'
     import FaRegCircle from 'svelte-icons/fa/FaRegCircle.svelte'
@@ -147,7 +144,7 @@
     <p class="mt-7"></p>
     
     <Table self={current_list} collection='Tasks' bind:this={table}>
-        <Column size={5}/>
+        <TableColumn size={5}/>
             <Icon   slot='c0' 
                     let:item 
                     size={4} 
@@ -155,7 +152,7 @@
                     on:click={async (event) => { await finish_task(event, item); }} 
                     class="cursor-pointer"/>
 
-        <Column field='Name' />
+        <TableColumn field='Name' />
     </Table>
 
     <Edit class="py-1 text-sm font-normal text-gray-500 dark:text-gray-400 cursor-pointer" on_enter={on_new_task} placeholder='New task' inserter={true}>

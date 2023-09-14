@@ -8,7 +8,7 @@
   import VerticalToolbar from './vertical.toolbar.svelte'
   import {AuthorizedView, Authorized, NotAuthorized, signin_href, session} from '@humandialog/auth.svelte'
   import {Button} from 'flowbite-svelte';
-  import Icon from './lib/icon.svelte'
+  import {Icon} from '@humandialog/forms.svelte'
   import FaUser from 'svelte-icons/fa/FaUser.svelte'
 
   import {  dark_mode_store, 

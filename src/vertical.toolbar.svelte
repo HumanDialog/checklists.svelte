@@ -16,7 +16,7 @@
             right_sidebar_visible_store,
             main_sidebar_visible_store,
             app_config} from "./app.js";     
-    import Icon from './lib/icon.svelte';
+    import {Icon} from '@humandialog/forms.svelte';
     import {session, signin_href, signout_href} from '@humandialog/auth.svelte'
     import FaSignInAlt from 'svelte-icons/fa/FaSignInAlt.svelte'
     import FaSignOutAlt from 'svelte-icons/fa/FaSignOutAlt.svelte'

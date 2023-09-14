@@ -1,10 +1,8 @@
 <script>
-    import Table from './forms/components/table/table.svelte'
-    import Column from './forms/components/table/column.svelte'
+    import {Table, TableColumn, Icon} from '@humandialog/forms.svelte'
     import {location} from 'svelte-spa-router'
     import {Auth, session} from '@humandialog/auth.svelte'
     import { Spinner } from "flowbite-svelte";
-    import Icon from './lib/icon.svelte'
     import FaRegCheckCircle from 'svelte-icons/fa/FaRegCheckCircle.svelte'
     import FaRegCircle from 'svelte-icons/fa/FaRegCircle.svelte'
 
@@ -105,7 +103,7 @@
     <p class="mt-7"></p>
     
     <Table objects={my_tasks} bind:this={table}>
-        <Column size={5}/>
+        <TableColumn size={5}/>
             <Icon   slot='c0' 
                     let:item 
                     size={4} 
@@ -113,7 +111,7 @@
                     on:click={async (event) => { await finish_task(event, item); }} 
                     class="cursor-pointer"/>
 
-        <Column field='Name' />
+        <TableColumn field='Name' />
     </Table>
     
 {:else}

@@ -1,12 +1,13 @@
 <script lang="ts">
-    import Page from './forms/page.svelte'
-    import Row from './forms/tiles.row.svelte'
-    import Tile from './forms/tile.svelte'
-    import Box from './forms/form.box.svelte'
-    import Input from './forms/components/inputbox.ltop.svelte'
-    import Combo from './forms/components/combo/combo.svelte'
-    import Combo_item from './forms/components/combo/combo.item.svelte'
-    import Combo_source from './forms/components/combo/combo.source.svelte'    
+    import {    Page, 
+                Row, 
+                Tile, 
+                Box,
+                Input,
+                Combo,
+                ComboItem,
+                ComboSource} from '@humandialog/forms.svelte'
+    
     import {Auth} from '@humandialog/auth.svelte'
 
 
@@ -50,15 +51,15 @@
             <Box  c=5>  
                 <Input c=5 a="Name"/>
                 <Combo c=2 a="Priority" icon={true}>
-                    <Combo_item name='Urgent'   key={4}     color='rgb(200, 50, 50)' />
-                    <Combo_item name='High'     key={3}     color='rgb(150, 100, 50)' />
-                    <Combo_item name='Medium'   key={2}     color='rgb(100, 100, 100)' />
-                    <Combo_item name='Low'      key={1}     color='rgb(50, 100, 100)' />
-                    <Combo_item name='Never'    key={0}     color='rgb(50, 50, 150)' />
+                    <ComboItem name='Urgent'   key={4}     color='rgb(200, 50, 50)' />
+                    <ComboItem name='High'     key={3}     color='rgb(150, 100, 50)' />
+                    <ComboItem name='Medium'   key={2}     color='rgb(100, 100, 100)' />
+                    <ComboItem name='Low'      key={1}     color='rgb(50, 100, 100)' />
+                    <ComboItem name='Never'    key={0}     color='rgb(50, 50, 150)' />
                 </Combo>
 
                 <Combo c=3 a="Responsible" icon={true} on_select={async (task, sel_key, sel_name) => {await on_user_select(task, sel_key, sel_name)}}>
-                    <Combo_source on_collect={on_users_combo_source} key="$ref" name='Name'/>
+                    <ComboSource on_collect={on_users_combo_source} key="$ref" name='Name'/>
                     
                 </Combo>
             </Box>

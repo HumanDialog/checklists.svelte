@@ -9,14 +9,13 @@
     import {
       auto_hide_sidebar
     } from "./app";
-    import Icon from './lib/icon.svelte'
+    import {Icon, Edit} from '@humandialog/forms.svelte'
     import FaList from 'svelte-icons/fa/FaList.svelte'
     import FaPlus from 'svelte-icons/fa/FaPlus.svelte'
     import FaTimes from 'svelte-icons/fa/FaTimes.svelte'
     import {Auth, session, Authorized} from '@humandialog/auth.svelte'
     import { onMount, afterUpdate } from "svelte";
     import {location, push} from 'svelte-spa-router'
-    import Edit from './forms/components/edit.field.svelte'
     //import {all_lists} from './todo.config.js'
     
     let checklists = null;

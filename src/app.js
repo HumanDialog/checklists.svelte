@@ -1,10 +1,6 @@
 import {writable, get} from 'svelte/store';
 
-export const data_store = writable(null);
-export const data_tick_store = writable(1);
-export const context_items_store = writable({focused:'', data: null, sel: null})
-export const context_info_store = writable({data: '', sel: ''})
-export const context_types_store = writable({focused:'', data: null, sel: null})
+
 
 export const app_config = writable(null);
 export const route_prefix = writable('');
